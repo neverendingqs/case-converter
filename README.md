@@ -1,6 +1,6 @@
 Bootstrapping React.js
 
-Based on:
+Based on (with modifications):
 
 * https://www.codecademy.com/articles/react-setup-i
 * https://www.codecademy.com/articles/react-setup-ii
