@@ -6,7 +6,7 @@ A simple React.js application that can be deployed to Netlify.
 
 Source code used as an example for:
 
-* [Running npm Commands on Netlify Deployment]
+* [Running npm Commands on Netlify Deployment](http://blog.neverendingqs.com/2016/12/26/running-npm-commands-on-netlify-deployment/)
 
 React.js code based on (with modifications):
 
