@@ -44,18 +44,29 @@ module.exports = React.createClass({
 
   render: function () {
     return (
-      <div>
-        <input type="text" id="unconverted" onChange={this.handleTextChange} />
-        <select onChange={this.handleSelectionChange}>
-          <option value="camel-case">Camel Case</option>
-          <option value="kebab-case">Kebab Case</option>
-          <option value="lower-case">Lower Case</option>
-          <option value="snake-case">Snake Case</option>
-          <option value="start-case">Start Case</option>
-          <option value="upper-case">Upper Case</option>
-        </select>
-        <h1>{this.state.converted}</h1>
-      </div>
+      <form>
+        <div class="form-group row">
+          <select className="form-control" onChange={this.handleSelectionChange}>
+            <option value="camel-case">Camel Case</option>
+            <option value="kebab-case">Kebab Case</option>
+            <option value="lower-case">Lower Case</option>
+            <option value="snake-case">Snake Case</option>
+            <option value="start-case">Start Case</option>
+            <option value="upper-case">Upper Case</option>
+          </select>
+        </div>
+
+        <div class="form-group row">
+          <input className="form-control" type="text" id="unconverted" onChange={this.handleTextChange} placeholder="Type your text here." />
+        </div>
+
+        <hr />
+
+        <div class="form-group row">
+          <label>Output:</label>
+          <pre>{this.state.converted}</pre>
+        </div>
+      </form>
     );
   }
 });
