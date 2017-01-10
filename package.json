@@ -1,5 +1,5 @@
 {
-  "name": "case-converter",
+  "name": "string-utils-ui",
   "version": "1.0.0",
   "description": "A simple React.js application that converts strings to different cases using Lodash.",
   "main": "index.js",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/neverendingqs/case-converter"
+    "url": "git+https://github.com/neverendingqs/string-utils-ui"
   },
   "keywords": [
     "react.js",
@@ -19,9 +19,9 @@
   "author": "neverendingqs",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/neverendingqs/case-converter/issues"
+    "url": "https://github.com/neverendingqs/string-utils-ui/issues"
   },
-  "homepage": "https://github.com/neverendingqs/case-converter#readme",
+  "homepage": "https://github.com/neverendingqs/string-utils-ui#readme",
   "dependencies": {
     "lodash": "^4.17.4",
     "react": "^15.3.2",
