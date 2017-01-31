@@ -35,6 +35,6 @@
     "eslint-plugin-react": "^6.4.1",
     "html-webpack-plugin": "^2.24.0",
     "webpack": "^1.13.2",
-    "webpack-dev-server": "^1.16.2"
+    "webpack-dev-server": "^2.2.1"
   }
 }
