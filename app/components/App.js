@@ -79,24 +79,24 @@ module.exports = React.createClass({
           <div className="row">
             <div className="col-sm-12">
               <select className="form-control" onChange={this.handleConvertTypeChange}>
-                <option value="camel-case">_.camelCase</option>
-                <option value="capitalize">_.capitalize</option>
-                <option value="deburr">_.deburr</option>
-                <option value="escape">_.escape</option>
-                <option value="escape-reg-exp">_.escapeRegExp</option>
-                <option value="kebab-case">_.kebabCase</option>
-                <option value="lower-case">_.lowerCase</option>
-                <option value="lower-first">_.lowerFirst</option>
-                <option value="snake-case">_.snakeCase</option>
-                <option value="start-case">_.startCase</option>
-                <option value="to-lower">_.toLower</option>
-                <option value="to-upper">_.toUpper</option>
-                <option value="trim">_.trim</option>
-                <option value="trim-end">_.trimEnd</option>
-                <option value="trim-start">_.trimStart</option>
-                <option value="unescape">_.unescape</option>
-                <option value="upper-case">_.upperCase</option>
-                <option value="upper-first">_.upperFirst</option>
+                <option value="camel-case">camelCase</option>
+                <option value="capitalize">capitalize</option>
+                <option value="deburr">deburr</option>
+                <option value="escape">escape</option>
+                <option value="escape-reg-exp">escapeRegExp</option>
+                <option value="kebab-case">kebabCase</option>
+                <option value="lower-case">lowerCase</option>
+                <option value="lower-first">lowerFirst</option>
+                <option value="snake-case">snakeCase</option>
+                <option value="start-case">startCase</option>
+                <option value="to-lower">toLower</option>
+                <option value="to-upper">toUpper</option>
+                <option value="trim">trim</option>
+                <option value="trim-end">trimEnd</option>
+                <option value="trim-start">trimStart</option>
+                <option value="unescape">unescape</option>
+                <option value="upper-case">upperCase</option>
+                <option value="upper-first">upperFirst</option>
               </select>
             </div>
           </div>
