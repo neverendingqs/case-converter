@@ -24,7 +24,7 @@
   "homepage": "https://github.com/neverendingqs/string-utils-ui#readme",
   "dependencies": {
     "lodash": "^4.17.4",
-    "react": "^15.3.2",
+    "react": "^16.0.0",
     "react-dom": "^15.3.2"
   },
   "devDependencies": {
