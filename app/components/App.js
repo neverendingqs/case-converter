@@ -1,9 +1,13 @@
 const React = require('react');
 const _ = require('lodash/string');
 
-function convertCase(s, convertType, lineType) {
+function convertCase(s, convertType) {
   let lines = s.split("\n");
   switch(convertType) {
+    case "atob":
+      return atob(s);
+    case "btoa":
+      return btoa(s);
     case "camel-case":
       return lines.map(l => _.camelCase(l)).join('\n');
     case "capitalize":
@@ -49,8 +53,7 @@ module.exports = React.createClass({
   getInitialState: function() {
     return {
       converted: '',
-      convertType: 'camel-case',
-      lineType: "multi-line"
+      convertType: 'camel-case'
     };
   },
 
@@ -65,7 +68,14 @@ module.exports = React.createClass({
 	  this.setState({
       converted: convertCase(e.target.value, this.state.convertType)
     });
-	},
+  },
+  
+  handleCopyToClipboard: function(e) {
+    e.preventDefault();
+    this.refs.output.focus();
+    this.refs.output.select();
+    document.execCommand('copy');
+  },
 
   render: function () {
     return (
@@ -78,7 +88,11 @@ module.exports = React.createClass({
           </div>
           <div className="row">
             <div className="col-sm-12">
-              <select className="form-control" onChange={this.handleConvertTypeChange}>
+              <select className="form-control" onChange={this.handleConvertTypeChange} defaultValue="encoding-header">
+                <option value="encoding-header" disabled="disabled">-- Encode / Decode --</option>
+                <option value="atob">Base64 Decode</option>
+                <option value="btoa">Base64 Encode</option>
+                <option value="lodash-header" disabled="disabled">-- Lodash Functions --</option>
                 <option value="camel-case">camelCase</option>
                 <option value="capitalize">capitalize</option>
                 <option value="deburr">deburr</option>
@@ -105,8 +119,12 @@ module.exports = React.createClass({
         <hr />
 
         <div className="form-group row">
-          <label>Output:</label>
-          <pre>{this.state.converted}</pre>
+          <button
+            className="btn btn-info btn-sm"
+            onClick={e => this.handleCopyToClipboard(e)}
+            style={{ marginBottom: '10px'}}
+          >Copy Output to Clipboard</button>
+          <textarea className="form-control" rows="10" ref="output" value={this.state.converted}></textarea>
         </div>
       </form>
     );
