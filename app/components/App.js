@@ -8,6 +8,14 @@ function convertCase(s, convertType) {
       return atob(s);
     case "btoa":
       return btoa(s);
+    case "uri-decode":
+      return decodeURI(s);
+    case "uri-decode-component":
+      return decodeURIComponent(s);
+    case "uri-encode":
+      return encodeURI(s);
+    case "uri-encode-component":
+      return encodeURIComponent(s);
     case "camel-case":
       return lines.map(l => _.camelCase(l)).join('\n');
     case "capitalize":
@@ -92,6 +100,10 @@ module.exports = React.createClass({
                 <option value="encoding-header" disabled="disabled">-- Encode / Decode --</option>
                 <option value="atob">Base64 Decode</option>
                 <option value="btoa">Base64 Encode</option>
+                <option value="uri-decode">URI Decode</option>
+                <option value="uri-decode-component">URI Decode Component</option>
+                <option value="uri-encode">URI Encode</option>
+                <option value="uri-encode-component">URI Encode Component</option>
                 <option value="lodash-header" disabled="disabled">-- Lodash Functions --</option>
                 <option value="camel-case">camelCase</option>
                 <option value="capitalize">capitalize</option>
