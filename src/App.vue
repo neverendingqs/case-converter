@@ -34,6 +34,13 @@
         <b-button type="is-primary">Copy to Clipboard</b-button>
       </b-field>
     </section>
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>
+          <i>Source code is available on <a href="https://github.com/neverendingqs/string-utils-ui" target="_blank" rel="noopener noreferrer">GitHub</a>.</i>
+        </p>
+      </div>
+    </footer>
   </div>
 </template>
 
