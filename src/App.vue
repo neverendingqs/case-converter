@@ -12,14 +12,12 @@
         ></b-input>
       </b-field>
       <b-field>
-        <b-select
-          expanded
-          v-model="selectedFunction"
-        >
+        <b-select expanded v-model="selectedFunction">
           <option
             v-for="[name] in Object.entries(functions)"
             :value="name"
-            :key="name">
+            :key="name"
+          >
             {{ name }}
           </option>
         </b-select>
@@ -29,6 +27,7 @@
           type="textarea"
           rows="10"
           v-model="output"
+          v-clipboard:copy="output"
         ></b-input>
       </b-field>
       <b-field>
@@ -41,18 +40,17 @@
 <script>
 export default {
   name: "App",
-  components: {
-  },
+  components: {},
   data() {
     return {
-      input: '',
+      input: "",
       functions: {
-        'Base64 Decode': btoa,
-        'Base64 Encode': atob
+        "Base64 Decode": btoa,
+        "Base64 Encode": atob
       },
-      selectedFunction: 'Base64 Decode',
-      output: ''
-    }
+      selectedFunction: "Base64 Decode",
+      output: ""
+    };
   },
   methods: {
     updateOutput() {
