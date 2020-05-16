@@ -23,6 +23,11 @@
         </b-select>
       </b-field>
       <b-field>
+        <b-switch v-model="splitOnNewLine" @input="updateOutput">
+          Split on New Line
+        </b-switch>
+      </b-field>
+      <b-field>
         <b-input
           type="textarea"
           rows="10"
@@ -56,13 +61,19 @@ export default {
         "Base64 Encode": atob
       },
       selectedFunction: "Base64 Decode",
+      splitOnNewLine: true,
       output: ""
     };
   },
   methods: {
     updateOutput() {
       const f = this.functions[this.selectedFunction];
-      this.output = f(this.input);
+      this.output = this.splitOnNewLine
+        ? this.input
+          .split(/\r\n|\r|\n/)
+          .map(f)
+          .join('\n')
+        : f(this.input);
     }
   }
 };
