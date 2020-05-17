@@ -42,7 +42,15 @@
     <footer class="footer">
       <div class="content has-text-centered">
         <p>
-          <i>Source code is available on <a href="https://github.com/neverendingqs/string-utils-ui" target="_blank" rel="noopener noreferrer">GitHub</a>.</i>
+          <i
+            >Source code is available on
+            <a
+              href="https://github.com/neverendingqs/string-utils-ui"
+              target="_blank"
+              rel="noopener noreferrer"
+              >GitHub</a
+            >.</i
+          >
         </p>
       </div>
     </footer>
@@ -51,18 +59,18 @@
 
 <script>
 export default {
-  name: "App",
+  name: 'App',
   components: {},
   data() {
     return {
-      input: "",
+      input: '',
       functions: {
-        "Base64 Decode": btoa,
-        "Base64 Encode": atob
+        'Base64 Decode': btoa,
+        'Base64 Encode': atob
       },
-      selectedFunction: "Base64 Decode",
+      selectedFunction: 'Base64 Decode',
       splitOnNewLine: true,
-      output: ""
+      output: ''
     };
   },
   methods: {
@@ -70,9 +78,9 @@ export default {
       const f = this.functions[this.selectedFunction];
       this.output = this.splitOnNewLine
         ? this.input
-          .split(/\r\n|\r|\n/)
-          .map(f)
-          .join('\n')
+            .split(/\r\n|\r|\n/)
+            .map(f)
+            .join('\n')
         : f(this.input);
     }
   }
