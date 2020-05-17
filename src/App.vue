@@ -12,8 +12,7 @@
         ></b-input>
       </b-field>
       <b-field>
-        <b-select expanded v-model="selectedFunction" 
-            @input="updateOutput">
+        <b-select expanded v-model="selectedFunction" @input="updateOutput">
           <option
             v-for="[name] in Object.entries(functions)"
             :value="name"
@@ -59,6 +58,28 @@
 </template>
 
 <script>
+import {
+  camelCase,
+  capitalize,
+  deburr,
+  escape,
+  escapeRegExp,
+  kebabCase,
+  lowerCase,
+  lowerFirst,
+  snakeCase,
+  startCase,
+  toLower,
+  toUpper,
+  trim,
+  trimEnd,
+  trimStart,
+  unescape,
+  upperCase,
+  upperFirst,
+  words
+} from 'lodash';
+
 export default {
   name: 'App',
   components: {},
@@ -68,10 +89,29 @@ export default {
       functions: {
         'Base64 Decode': btoa,
         'Base64 Encode': atob,
+        'Camel Case': camelCase,
+        Capitalize: capitalize,
+        Deburr: deburr,
+        'HTML Escape (Simple)': escape,
+        'HTML Unescape (Simple)': unescape,
+        'Kebab Case': kebabCase,
+        'Lower Case (Words)': lowerCase,
+        'Lower Case (String': toLower,
+        'Lower First': lowerFirst,
+        'Regex Escape': escapeRegExp,
+        'Snake Case': snakeCase,
+        'Start Case': startCase,
+        Trim: trim,
+        'Trim End': trimEnd,
+        'Trim Start': trimStart,
+        'Upper Case (String)': toUpper,
+        'Upper Case (Words)': upperCase,
+        'Upper First': upperFirst,
         'URI Decode': decodeURI,
         'URI Decode Component': decodeURIComponent,
         'URI Encode': encodeURI,
-        'URI Encode Component': encodeURIComponent
+        'URI Encode Component': encodeURIComponent,
+        Words: words
       },
       selectedFunction: 'Base64 Decode',
       splitOnNewLine: true,
