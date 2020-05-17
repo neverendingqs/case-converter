@@ -12,7 +12,8 @@
         ></b-input>
       </b-field>
       <b-field>
-        <b-select expanded v-model="selectedFunction">
+        <b-select expanded v-model="selectedFunction" 
+            @input="updateOutput">
           <option
             v-for="[name] in Object.entries(functions)"
             :value="name"
@@ -66,7 +67,11 @@ export default {
       input: '',
       functions: {
         'Base64 Decode': btoa,
-        'Base64 Encode': atob
+        'Base64 Encode': atob,
+        'URI Decode': decodeURI,
+        'URI Decode Component': decodeURIComponent,
+        'URI Encode': encodeURI,
+        'URI Encode Component': encodeURIComponent
       },
       selectedFunction: 'Base64 Decode',
       splitOnNewLine: true,
